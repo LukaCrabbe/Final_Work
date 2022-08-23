@@ -1,0 +1,36 @@
+.canvas {
+    width: 100vw;
+    height: 200vh;
+    background-color: #FFFFFF;
+    background-image: url("../pictures/parchment.jpg");
+    background-position: center;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .workspaceTitle {
+        margin: 0;
+    }
+
+    .canvases {
+        div {
+            display: inline-block;
+
+            >* {
+                display: inline-block;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }
+    }
+}
+
+
+label {
+    display: block
+}
+
+;

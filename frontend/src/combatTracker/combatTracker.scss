@@ -1,0 +1,356 @@
+@use '../index.scss';
+
+.count {
+    border: 2px black solid;
+    padding: 4px;
+    vertical-align: sub;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+svg:hover {
+    cursor: pointer;
+}
+
+.combat {
+    font-family: 'Signika', sans-serif;
+    width: 60%;
+    border: index.$border-width solid index.$red;
+    border-radius: 30px;
+    position: absolute;
+    background-color: index.$background-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    .mainTitles {
+        width: 45%;
+        margin-left: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+
+        input[type=text] {
+            margin-left: 2em;
+        }
+
+        svg {
+            margin-left: 1em;
+        }
+    }
+
+    .icons {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+
+        svg {
+            margin-right: 3.5em;
+        }
+
+    }
+
+    .counter {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h2 {
+            width: 30%;
+            display: inline-block;
+        }
+
+        #count {
+            padding-left: 0;
+            width: 15%;
+            text-align: center;
+        }
+    }
+}
+
+.characters {
+    width: 100%;
+
+    .icons {
+        svg {
+            margin-right: 1em;
+        }
+
+        .cross {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+
+    .head {
+        width: 90%;
+        display: flex;
+        margin-left: 5%;
+        justify-content: space-evenly;
+        text-align: center;
+
+        .double {
+            flex: 0 1 32%;
+        }
+
+        >* {
+            display: inline-block;
+            width: 16%;
+        }
+    }
+
+    .character {
+        border: 2px black solid;
+        box-sizing: border-box;
+        width: 95%;
+        margin-left: 1.5em;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+
+        >* {
+            display: inline-block;
+            width: 16%;
+        }
+
+        .characterForm {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 48%;
+
+            >input {
+                display: inline-block;
+                width: 25%;
+                margin-left: 1em;
+                margin-top: 2.5em;
+            }
+
+            button {
+                margin-top: 0.5em;
+                margin-left: 12em;
+                margin-bottom: 0.5em;
+            }
+        }
+
+        .editables {
+            display: inline-block;
+            width: 48%;
+
+            >* {
+                display: inline-block;
+                width: 33%;
+            }
+        }
+
+
+        .hitpoints>* {
+            display: inline-block;
+            margin-right: 0.4em;
+        }
+
+        .conditions {
+            flex: 0 1 32%;
+            text-align: left;
+
+            .condition {
+                width: 45%;
+                margin-top: 0.25em;
+
+                div {
+                    width: 80%;
+                    border: 2px solid #FF1A1A;
+                    border-radius: 10px;
+                    padding: 4px;
+                    text-align: center;
+
+                    >* {
+                        display: inline-block;
+                    }
+                }
+
+                h4 {
+                    margin: 0;
+                    margin-right: 4%;
+                }
+            }
+
+            ul>* {
+                display: inline-block;
+            }
+
+            .addCondition {
+                form {
+                    margin-left: 0.2em;
+                }
+            }
+        }
+
+        .small {
+            flex: 0 1 5%;
+        }
+    }
+
+    .add {
+        text-align: center;
+        border: 2px black dashed;
+        box-sizing: border-box;
+        width: 95%;
+        margin-left: 1.5em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+
+        div>* {
+            display: inline-block;
+            margin-right: 0.2em;
+        }
+
+        .addCharacterForm {
+            padding-top: 2em;
+            padding-bottom: 2em;
+
+            >* {
+                display: inline-block;
+                margin-right: 0.5em;
+            }
+
+            button {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .monsterSheet {
+        border: 2px black solid;
+        box-sizing: border-box;
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+
+        h2 {
+            padding-left: 5%;
+        }
+
+        div {
+            box-sizing: border-box;
+            width: 50%;
+
+            div {
+                width: 100%;
+
+                p {
+                    padding-left: 5%;
+
+                    span {
+                        margin-right: 0.5em;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .abilityScores {
+            margin-top: 2em;
+            margin-bottom: 2em;
+
+            div:first-of-type {
+                margin-bottom: 0.5em;
+            }
+
+            >div {
+                width: 100%;
+                display: flex;
+                text-align: center;
+
+                >* {
+                    width: 16%;
+                    margin: 0;
+                    margin-right: 0.5em;
+                }
+            }
+        }
+
+        .challenge {
+            >* {
+                display: inline-block;
+            }
+        }
+    }
+
+
+}
+
+/* Toggle switch : https://www.w3schools.com/howto/howto_css_switch.asp */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

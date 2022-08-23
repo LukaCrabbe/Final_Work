@@ -1,0 +1,105 @@
+@use '../index.scss';
+
+@keyframes dropdownReveal {
+    from {
+        width: 0%;
+        display: 0%;
+    }
+
+    to {
+        // width: 80%;
+        display: 100%;
+    }
+}
+
+@keyframes dropdownHide {
+    from {
+        display: 100%;
+        width: 80%;
+    }
+
+    to {
+        width: 0%;
+        display: 0%;
+    }
+}
+
+
+
+@keyframes dropdownItems {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+.logout {
+    .user {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-left: 0.5em;
+            width: 25px;
+            height: 25px;
+            border: 2px solid index.$red;
+            border-radius: 100%;
+            padding: 3px;
+            background-color: white;
+        }
+    }
+}
+
+.dropdown {
+    background-color: white;
+    width: 80%;
+    height: auto;
+    border: 2px solid index.$red;
+    border-radius: 5px;
+    display: block;
+    animation: dropdownReveal 0.5s ease-in;
+
+    h4 {
+        margin-top: 0.75em;
+        margin-bottom: 0.75em;
+        animation: dropdownItems 1s ease-in 0.25s;
+        animation-fill-mode: both;
+    }
+
+    h4:hover {
+        cursor: pointer;
+        color: index.$red;
+    }
+
+
+    svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        margin-top: 0.75em;
+        margin-bottom: 0.75em;
+        animation: dropdownItems 1 ease-in;
+        animation-fill-mode: both;
+
+        path:hover {
+            fill: index.$red;
+        }
+    }
+
+    .user_link {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+.hide {
+    display: none;
+    animation: dropdownHide 1s ease-in;
+}

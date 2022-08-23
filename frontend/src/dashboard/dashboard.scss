@@ -1,0 +1,183 @@
+@use '../index.scss';
+
+
+@keyframes canvasForm {
+    from {
+        max-width: 0;
+    }
+
+    to {
+        max-width: 200px;
+    }
+}
+
+
+.head_div {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+
+    .logo {
+        margin-top: 1em;
+        margin-left: 1em;
+        width: 125px;
+        height: 125px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+}
+
+
+
+.dashboard_nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.delete {
+    margin-left: 0.75em;
+    width: 16px;
+    height: 16px;
+}
+
+.workspace_nav {
+    display: flex;
+    flex: 0 1 90%;
+    justify-content: center;
+
+    >* {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+
+    .workspaces {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-bottom: 0.25em;
+        }
+    }
+
+    .add_workspace {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5em;
+            margin-left: 0.4em;
+            margin-bottom: 0.3em;
+        }
+    }
+
+    .workspace_form {
+        display: flex;
+        align-items: center;
+        margin-top: 0.25em;
+
+        label {
+            margin-right: 0.3em;
+        }
+
+        input[type=text] {
+            animation: canvasForm 1s;
+        }
+
+        button {
+            background-color: #fcfcfc;
+            font-family: 'Signika', sans-serif;
+            border: 2px solid index.$red;
+            border-radius: 4px;
+            margin-left: 0.3em;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    h4 {
+        padding-bottom: 0.2em;
+    }
+
+
+
+    h4:hover {
+        cursor: pointer;
+    }
+}
+
+.canvas_picture {
+    text-align: center;
+
+    img {
+        border-radius: 10px;
+    }
+}
+
+.canvas_title {
+    text-align: center;
+
+    >* {
+        display: inline-block;
+    }
+}
+
+.logoutDashboard {
+    flex: 0 1 10%;
+}
+
+.dashboard {
+    display: flex;
+    background-image: index.$background;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workspace_content {
+    display: flex;
+    width: 70vw;
+    height: auto;
+    background-color: #fcfcfc;
+    border: index.$border-width solid index.$red;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+
+    >* {
+        margin-top: 1%;
+        flex: 0 1 33%;
+    }
+}
+
+.add_canvas {
+    text-align: center;
+
+    svg {
+        border: 2px solid index.$red;
+        padding: 8px;
+        border-radius: 8px;
+    }
+}
+
+
+
+
+.workspaces {
+
+    >* {
+        display: inline-block;
+    }
+}

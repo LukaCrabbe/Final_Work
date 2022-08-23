@@ -1,0 +1,148 @@
+@use '../index.scss';
+
+
+.note {
+    font-family: 'Signika', sans-serif;
+    width: 40%;
+    border: index.$border-width solid index.$red;
+    border-radius: 30px;
+    position: absolute;
+    background-color: index.$background-color;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+
+        .note_title {
+            display: flex;
+            justify-content: flex-start;
+            width: 45%;
+
+            h2 {
+                margin-left: 1.5em;
+            }
+
+            svg {
+                margin-left: 1em;
+            }
+        }
+
+        .note_text {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            >* {
+                display: inline-block;
+            }
+
+            p {
+                width: 90%;
+                padding-left: 2em;
+            }
+        }
+
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+
+            svg {
+                margin-right: 10%;
+            }
+
+            svg:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .edit {
+        form {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            width: 100%;
+
+            .note_title {
+                display: flex;
+                justify-content: flex-start;
+                width: 45%;
+
+                h2 {
+                    margin-left: 1.5em;
+                }
+
+                svg {
+                    margin-left: 1em;
+                }
+
+                input[type=text] {
+                    font-family: 'Signika', sans-serif;
+                    font-size: 16px;
+                    margin-top: 3%;
+                    margin-left: 2em;
+                }
+            }
+
+            .note_text {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                width: 100%;
+
+
+                >* {
+                    display: inline-block;
+                }
+
+                p {
+                    width: 90%;
+                    padding-left: 2em;
+                }
+
+                .textarea {
+                    font-family: 'Signika', sans-serif;
+                    font-size: 16px;
+                    margin-left: 2em;
+                    margin-top: 1em;
+                    width: 100%;
+                    margin-right: 2em;
+                }
+
+                svg {
+                    margin-top: 1em;
+                    margin-left: 2em;
+                    margin-right: 1em;
+                    margin-bottom: 1em;
+                }
+
+                button {
+                    margin-top: 0.5em;
+
+                }
+
+            }
+
+            .icons {
+                display: flex;
+                justify-content: flex-end;
+                width: 50%;
+
+                svg {
+                    margin-right: 10%;
+                }
+
+                svg:hover {
+                    cursor: pointer;
+                }
+            }
+
+
+
+        }
+    }
+}
