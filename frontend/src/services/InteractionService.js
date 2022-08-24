@@ -66,7 +66,15 @@ const InteractionService = {
                     })
                 ],
                 listeners: {
-                    start(event) {},
+                    start(event) {
+
+                        let z = event.target.style.zIndex + 1;
+                        if (event.target.style.zIndex !== "") {
+                            z = parseInt(event.target.style.zIndex) + 1
+                        }
+                        event.target.style.zIndex =
+                            `${z}`
+                    },
                     move(event) {
                         position.x += event.dx
                         position.y += event.dy

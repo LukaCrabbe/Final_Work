@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './login.scss'
 import authSlice from '../store/slices/auth';
+import logo from '../pictures/pngfind.com-dungeons-and-dragons-png-2663967.png'
 
 
 
@@ -90,6 +91,10 @@ const Login = () => {
 
 
   return <div className='login_page'>
+    <div className="login_head">
+      <img src={logo} alt="" className='logo' />
+      <h1 className='appName'>Elysion D&D</h1>
+    </div>
     {register ?
       <div className='register'>
         <h2>Register</h2>

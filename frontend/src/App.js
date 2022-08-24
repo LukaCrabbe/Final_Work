@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import React,{Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import store, { persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
@@ -18,14 +17,14 @@ function App() {
         <BrowserRouter>
           <Fragment>
             <Routes>
-              <Route exact path="/login" element={<Login/>} />
-              <Route exact path="/" element={<ProtectedRoute/>}>
-                <Route exact path="/" element={<Dashboard/>} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/" element={<ProtectedRoute />}>
+                <Route exact path="/" element={<Dashboard />} />
               </Route>
-              <Route exact path="/" element={<ProtectedRoute/>}>
+              <Route exact path="/" element={<ProtectedRoute />}>
                 <Route exact path="/">
                   <Route path=":id">
-                    <Route path=":id" element={<Canvas/>}></Route>
+                    <Route path=":id" element={<Canvas />}></Route>
                   </Route>
                 </Route>
               </Route>

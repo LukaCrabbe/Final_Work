@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import authSlice from "../store/slices/auth";
-import useSWR from 'swr';
-import { fetcher } from "../utils/axios";
 import './logout.scss'
 
 const Logout = () => {
@@ -22,7 +20,6 @@ const Logout = () => {
 
     const toggleDropdown = () => {
         setDropDown(!dropDown)
-        console.log(userMenu.current)
         userMenu.current.classList.toggle("hide");
         userMenu.current.classList.toggle("dropdown");
     }

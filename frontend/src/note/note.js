@@ -11,7 +11,6 @@ const Note = (props) => {
 
     const [title, setTitle] = useState(props.title)
     const [noteText, setNoteText] = useState(props.text)
-    // const [editMode, setEditMode] = useState(false)
     const [noteId] = useState(props.id)
     const [editTitle, setEditTitle] = useState(false);
     const [editText, setEditText] = useState(false);
@@ -32,17 +31,21 @@ const Note = (props) => {
             interactService.unsetInteractable(htmlId)
         }
 
+        if (noteText === "") {
+            setNoteText("Add Text");
+        }
+
     }, [editTitle, editText, interactService, htmlId, title, noteText])
 
     const updateNote = (title, text, component, componentId, user) => {
         axios
             .patch(`http://${process.env.REACT_APP_API_URL}/${component}/${componentId}/`, { title, text, componentId, user })
             .then((response) => {
-                console.log(response)
+                console.log(response.status)
             })
             .catch((err) => {
                 if (err.response) {
-                    console.log(err.data)
+                    console.log(err.response)
                 }
             })
 
@@ -55,7 +58,6 @@ const Note = (props) => {
             text: noteText,
         },
         onSubmit: (values) => {
-            console.log(values.text)
             if (editTitle) {
                 setEditTitle(!editTitle)
             }
@@ -106,8 +108,6 @@ const Note = (props) => {
                             <path d="M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z"></path>
                         </svg>
                     </div>
-                    {/* <textarea name="text" rows="10" cols="88"
-                            style={editText ? { display: "block" } : { display: "none" }} defaultValue={noteText}></textarea> */}
                     <div className="note_text">
                         <TextareaAutosize className="textarea" name="text" style={editText ? { display: "block" } : { display: "none" }}
                             value={formik.values.text} onChange={formik.handleChange} />

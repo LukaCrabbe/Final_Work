@@ -25,6 +25,7 @@ svg:hover {
     border-radius: 30px;
     position: absolute;
     background-color: index.$background-color;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -92,15 +93,11 @@ svg:hover {
 
 
     .head {
-        width: 90%;
+        width: 95%;
         display: flex;
-        margin-left: 5%;
-        justify-content: space-evenly;
         text-align: center;
-
-        .double {
-            flex: 0 1 32%;
-        }
+        justify-content: flex-start;
+        margin-left: 1.5em;
 
         >* {
             display: inline-block;
@@ -136,11 +133,18 @@ svg:hover {
                 margin-top: 2.5em;
             }
 
-            button {
-                margin-top: 0.5em;
-                margin-left: 12em;
-                margin-bottom: 0.5em;
+            div {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                button {
+                    margin-top: 0.5em;
+                    margin-bottom: 0.5em;
+                }
             }
+
+
         }
 
         .editables {
@@ -233,8 +237,8 @@ svg:hover {
     .monsterSheet {
         border: 2px black solid;
         box-sizing: border-box;
-        width: 90%;
-        margin-left: 5%;
+        width: 95%;
+        margin-left: 1.5em;
         display: flex;
 
         h2 {

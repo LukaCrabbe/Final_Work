@@ -24,11 +24,11 @@ const WorkspaceContent = (props) => {
         axios
             .post(`http://${process.env.REACT_APP_API_URL}/canvas/`, { title, workspace })
             .then((response) => {
-                console.log(response)
+                console.log(response.status)
             })
             .catch((err) => {
                 if (err) {
-                    console.log(err.data)
+                    console.log(err.response)
                 }
             })
     }
@@ -37,11 +37,11 @@ const WorkspaceContent = (props) => {
         axios
             .delete(`http://${process.env.REACT_APP_API_URL}/canvas/${canvasId}/`, { data: { canvasId, user } })
             .then((response) => {
-                console.log(response)
+                console.log(response.status)
             })
             .catch((err) => {
                 if (err.response) {
-                    console.log(err.data)
+                    console.log(err.response)
                 }
             })
     }
@@ -57,7 +57,7 @@ const WorkspaceContent = (props) => {
                         }}
                         key={canvas.id}>
                         <div className='canvas_picture'>
-                            <img src={require("../../pictures/parchment.jpg")} alt="" width="300" height="300" />
+                            <img src={require("../../pictures/parchment.jpg")} alt="" width="250" height="250" />
                         </div>
                     </Link>
                     <div className='canvas_title' key={canvas.title}>
@@ -90,8 +90,7 @@ const WorkspaceContent = (props) => {
                     title: '',
                 }}
                 onSubmit={(values) => {
-                    console.log(values);
-                    console.log(props.activeWorkspace.id)
+                    setCanvasForm(!canvasForm);
                     addCanvas(values.title, props.activeWorkspace.id);
                 }}
             >

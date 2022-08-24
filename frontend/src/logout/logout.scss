@@ -2,13 +2,15 @@
 
 @keyframes dropdownReveal {
     from {
-        width: 0%;
-        display: 0%;
+        // width: 0%;
+        // display: 0%;
+        opacity: 0;
     }
 
     to {
         // width: 80%;
-        display: 100%;
+        // display: 100%;
+        opacity: 1;
     }
 }
 
@@ -67,7 +69,7 @@
     h4 {
         margin-top: 0.75em;
         margin-bottom: 0.75em;
-        animation: dropdownItems 1s ease-in 0.25s;
+        animation: dropdownItems 1s ease-in;
         animation-fill-mode: both;
     }
 

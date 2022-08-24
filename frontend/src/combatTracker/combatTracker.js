@@ -1,10 +1,8 @@
 import './combatTracker.scss';
 import React, { useState, useEffect } from "react";
-import interact from 'interactjs';
 import Character from './character/character'
 import useSWR from 'swr';
 import { fetcher } from "../utils/axios";
-import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
@@ -34,15 +32,27 @@ const CombatTracker = (props) => {
         }
         setCharacters(characterData?.data)
 
+        if (characterData?.data !== undefined && characterData?.data.length > 0) {
+            setCharacters(characterData?.data.sort((a, b) => {
+                if (a.initiative < b.initiative) {
+                    return 1;
+                }
+                if (a.initiative > b.initiative) {
+                    return -1;
+                }
+                return 0;
+            }))
+        }
+
         return () => {
             updateCombatTracker(title, count, "combatTracker", ctId);
         }
-    }, [characterData, title, htmlId, interact, editTitle, count, ctId])
+    }, [characterData, title, htmlId, interact, editTitle, count, ctId, characters])
 
-    const addCharacter = (name, initiative, armor_class, hitpoints, max_hitpoints, conditions, combat_tracker) => {
+    const addCharacter = (name, initiative, armor_class, hitpoints, max_hitpoints, combat_tracker) => {
         axios
             .post(`http://${process.env.REACT_APP_API_URL}/character/`,
-                { name, initiative, armor_class, hitpoints, max_hitpoints, conditions, combat_tracker })
+                { name, initiative, armor_class, hitpoints, max_hitpoints, combat_tracker })
             .then((response) => {
                 console.log(response)
             })
@@ -100,7 +110,7 @@ const CombatTracker = (props) => {
         },
         onSubmit: (values) => {
             setCharacterForm(!characterForm);
-            addCharacter(values.name, values.initiative, values.armor_class, values.hitpoints, values.hitpoints, "", ctId);
+            addCharacter(values.name, values.initiative, values.armor_class, values.hitpoints, values.hitpoints, ctId);
         }
     })
 
@@ -182,7 +192,6 @@ const CombatTracker = (props) => {
                 <h4>Armor Class</h4>
                 <h4>Concentration</h4>
                 <h4>HP</h4>
-                <h4 className='double'>Conditions</h4>
             </div>
             {characters === undefined ? <h4>...Loading</h4> :
                 characters.map((character, i) => (

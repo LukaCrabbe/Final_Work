@@ -47,7 +47,6 @@ class Character(models.Model):
     concentration = models.BooleanField(default=False)
     hitpoints = models.IntegerField()
     max_hitpoints = models.IntegerField()
-    conditions = models.CharField(default="", max_length=2, blank=True)
     statblock = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

@@ -122,7 +122,6 @@ class CharacterSerializer(serializers.ModelSerializer):
             "concentration",
             "hitpoints",
             "max_hitpoints",
-            "conditions",
             "statblock",
             "combat_tracker",
             "created",
@@ -135,8 +134,6 @@ class CharacterSerializer(serializers.ModelSerializer):
 
 
 class GetCharacterSerializer(serializers.ModelSerializer):
-    conditions = serializers.ChoiceField(choices=CONDITIONS)
-
     class Meta:
         model = Character
         fields = [
@@ -147,7 +144,6 @@ class GetCharacterSerializer(serializers.ModelSerializer):
             "concentration",
             "hitpoints",
             "max_hitpoints",
-            "conditions",
             "statblock",
             "combat_tracker_id",
             "created",

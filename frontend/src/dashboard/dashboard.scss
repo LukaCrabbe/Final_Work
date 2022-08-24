@@ -12,6 +12,8 @@
 }
 
 
+
+
 .head_div {
     display: flex;
     justify-content: space-between;
@@ -21,23 +23,22 @@
     .logo {
         margin-top: 1em;
         margin-left: 1em;
-        width: 125px;
-        height: 125px;
+        width: index.$logo_size;
+        height: index.$logo_size;
     }
 
-    h1 {
-        font-size: 64px;
+    .appName {
+        font-size: index.$appname_fontsize;
+        color: index.$red;
+        margin-left: 1em;
     }
+
 }
-
-
 
 .dashboard_nav {
     display: flex;
-    align-items: center;
     width: 100%;
-    margin-top: 2%;
-    margin-bottom: 1%;
+    margin-bottom: 1em;
 }
 
 .delete {
@@ -48,7 +49,7 @@
 
 .workspace_nav {
     display: flex;
-    flex: 0 1 90%;
+    width: 100vw;
     justify-content: center;
 
     >* {
@@ -92,17 +93,8 @@
         }
 
         button {
-            background-color: #fcfcfc;
-            font-family: 'Signika', sans-serif;
-            border: 2px solid index.$red;
-            border-radius: 4px;
             margin-left: 0.3em;
         }
-
-        button:hover {
-            cursor: pointer;
-        }
-
     }
 
     h4 {
@@ -139,7 +131,7 @@
 .dashboard {
     display: flex;
     background-image: index.$background;
-    background-position: center;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
@@ -154,16 +146,18 @@
     border: index.$border-width solid index.$red;
     border-radius: 20px;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
 
     >* {
         margin-top: 1%;
         flex: 0 1 33%;
     }
+
 }
 
 .add_canvas {
     text-align: center;
+    margin-top: 6em;
 
     svg {
         border: 2px solid index.$red;

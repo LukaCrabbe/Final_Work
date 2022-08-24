@@ -2,8 +2,48 @@ $red:#E14646;
 $border-width:3px;
 $background:url("/pictures/parchment.jpg");
 $background-color:#fbfbfb;
+$logo_size:125px;
+$appname_fontsize:54px;
 
 
 body {
     font-family: 'Signika', sans-serif;
+    overflow-x: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+button {
+    background-color: $background-color;
+    font-family: 'Signika', sans-serif;
+    border: 2px solid $red;
+    border-radius: 4px;
+    transition: background-color 1s;
+}
+
+input,
+select {
+    background-color: $background-color;
+    font-family: 'Signika', sans-serif;
+    border: 2px solid black;
+}
+
+
+label {
+    font-weight: 700;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: $red;
+    color: white;
+}
+
+svg {
+    transition: fill 0.5s;
+}
+
+svg:hover {
+    cursor: pointer;
+    fill: $red;
 }

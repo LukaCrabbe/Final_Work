@@ -1,17 +1,17 @@
 @use '../index.scss';
 
 
+
 .note {
-    font-family: 'Signika', sans-serif;
     width: 40%;
     border: index.$border-width solid index.$red;
     border-radius: 30px;
     position: absolute;
     background-color: index.$background-color;
+    z-index: 1;
 
     div {
         display: flex;
-        justify-content: space-between;
         align-items: baseline;
         flex-wrap: wrap;
 
@@ -21,7 +21,7 @@
             width: 45%;
 
             h2 {
-                margin-left: 1.5em;
+                margin-left: 1.5rem;
             }
 
             svg {
@@ -34,13 +34,10 @@
             justify-content: flex-start;
             align-items: center;
 
-            >* {
-                display: inline-block;
-            }
-
             p {
-                width: 90%;
-                padding-left: 2em;
+                max-width: 90%;
+                margin-left: 1.5em;
+                margin-right: 0.5em;
             }
         }
 
@@ -70,7 +67,13 @@
             .note_title {
                 display: flex;
                 justify-content: flex-start;
+                align-items: center;
                 width: 45%;
+
+                button {
+                    margin-top: 0.5em;
+                    margin-left: 1em;
+                }
 
                 h2 {
                     margin-left: 1.5em;
@@ -100,7 +103,7 @@
                 }
 
                 p {
-                    width: 90%;
+                    max-width: 90%;
                     padding-left: 2em;
                 }
 

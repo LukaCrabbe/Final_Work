@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './dashboard.scss';
 import logo from '../pictures/pngfind.com-dungeons-and-dragons-png-2663967.png'
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Logout from '../logout/logout';
 import { useSelector } from 'react-redux';
 import useSWR from 'swr';
 import axios from 'axios';
 import { fetcher } from "../utils/axios";
 import WorkspaceContent from './workspaceContent/workspaceContent';
-import { Formik, Field, Form, useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 
 const Dashboard = () => {
@@ -40,11 +40,11 @@ const Dashboard = () => {
         axios
             .post(`http://${process.env.REACT_APP_API_URL}/workspace/`, { title, user })
             .then((response) => {
-                console.log(response)
+                console.log(response.status)
             })
             .catch((err) => {
                 if (err.response) {
-                    setMessage(err.response.data)
+                    setMessage(err.response)
                 }
             })
     }
@@ -53,11 +53,11 @@ const Dashboard = () => {
         axios
             .delete(`http://${process.env.REACT_APP_API_URL}/workspace/${workspaceId}/`, { data: { workspaceId, user } })
             .then((response) => {
-                console.log(response)
+                console.log(response.status)
             })
             .catch((err) => {
                 if (err.response) {
-                    setMessage(err.response.data)
+                    setMessage(err.response)
                 }
             })
     }
@@ -67,8 +67,6 @@ const Dashboard = () => {
             title: '',
         },
         onSubmit: (values) => {
-            console.log(values);
-            console.log(userId);
             addWorkspace(values.title, userId);
             setWorkspaceForm(!workspaceForm);
         }
@@ -79,7 +77,7 @@ const Dashboard = () => {
             <Navigate to={"/login"}></Navigate> : null}
         <div className="head_div">
             <img src={logo} alt="" className='logo' />
-            <h1 className='appName'>Elysion</h1>
+            <h1 className='appName'>Elysion D&D</h1>
             <div className="logoutDashboard">
                 <Logout></Logout>
             </div>

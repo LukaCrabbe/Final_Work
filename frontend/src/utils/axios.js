@@ -81,8 +81,4 @@ export function fetcher(url) {
     return axiosService.get(url).then((res) => res.data);
 }
 
-// export function fetcher<T = any>(url: string) {
-//     return axiosService.get<T>(url).then((res) => res.data);
-// }
-
 export default axiosService;

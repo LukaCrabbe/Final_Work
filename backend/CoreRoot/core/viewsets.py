@@ -287,7 +287,6 @@ class CombatTrackerCharacterViewSet(ModelViewSet):
             "concentration",
             "hitpoints",
             "max_hitpoints",
-            "conditions",
             "statblock",
         )
         # self.check_object_permissions(self.request, obj)
